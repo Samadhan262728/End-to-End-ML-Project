@@ -1,0 +1,27 @@
+End to End Machine Lerning Project 
+
+A] How to create Environment:
+ 
+0) Check python extension is instlled or not in VS Code, if not availble then search & install it  
+1) Open Anaconda prompt 
+2) conda create -n <Environment name> python=3.8
+3) conda activate <Environment name>
+4) pip install numpy pandas matplotlib seaborn scikit-learn
+5) pip install PyYAML
+6) pip install Flask
+7) pip install Flask-Cors
+8) In VS CODE :
+   Open Command Palette (ctrl + shift + P) >> Python select Interpreter >> Select Environment or if it is not available add from explorer path
+9) Open new Terminal & verify selected environment is activated or not.
+
+B] How to set up Git repository in VS Code 
+
+1) Create repository on Github 
+2) Clone repository to local >> git clone <URL> 
+3) select repository folder / directory from my files to open VS code with Git 
+
+C] kernel: To run the Jupyter Notboon in the VS code for selected environment 
+
+pip install ipykernel
+	to access the libraries from same env rather than base env    
+	python -m ipykernel install --user --name E2EML --display-name "Python (E2EML)"
