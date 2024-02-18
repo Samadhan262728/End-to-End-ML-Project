@@ -1,6 +1,6 @@
 End to End Machine Lerning Project 
 
-*A] How to create Environment:
+>A] How to create Environment:
  
 0) Check python extension is instlled or not in VS Code, if not availble then search & install it  
 1) Open Anaconda prompt 
@@ -10,31 +10,35 @@ End to End Machine Lerning Project
 5) pip install PyYAML
 6) pip install Flask
 7) pip install Flask-Cors
-8) In VS CODE :
+8) pip install python-box==6.0.2
+9) pip install types-PyYAML
+10)pip install -e .
+11)In VS CODE :
    Open Command Palette (ctrl + shift + P) >> Python select Interpreter >> Select Environment or if it is not available add from explorer path
-9) Open new Terminal & verify selected environment is activated or not.
+12)Open new Terminal & verify selected environment is activated or not.
 
-*B] How to set up Git repository in VS Code 
+>B] How to set up Git repository in VS Code 
 
 1) Create repository on Github 
 2) Clone repository to local >> git clone <URL> 
 3) select repository folder / directory from my files to open VS code with Git 
 
-*C] kernel: To run the Jupyter Notboon in the VS code for selected environment 
-
-pip install ipykernel
+   *B.1] kernel: To run the Jupyter Notboon in the VS code for selected environment 
+    pip install ipykernel
 	to access the libraries from same env rather than base env    
 	python -m ipykernel install --user --name E2EML --display-name "Python (E2EML)"
 	
-*D] How to create project template:
+>c] How to create project template:
 
 1) Create template.py file in VS code 
-2) In that file import : 
+
+1.1) In template.py file paste below code 
+ 
    import os
    from pathlib import Path
    import logging             #What is logging ?
    logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
-   project_name = "mlProject" 
+   project_name = <Project name> 
    list_of_files = [
     f"src/{project_name}/__init__.py",
     f"src/{project_name}/components/__init__.py",
@@ -76,3 +80,82 @@ for filepath in list_of_files:
 
     else:
         logging.info(f"{filename} is already exists")
+		
+1.2) Automaticaly below file are created under Project folder  
+    f"src/{project_name}/__init__.py",
+    f"src/{project_name}/components/__init__.py",
+    f"src/{project_name}/utils/__init__.py",
+    f"src/{project_name}/utils/common.py",
+    f"src/{project_name}/config/__init__.py",
+    f"src/{project_name}/config/configuration.py",
+    f"src/{project_name}/pipeline/__init__.py",
+    f"src/{project_name}/entity/__init__.py",
+    f"src/{project_name}/entity/config_entity.py",
+    f"src/{project_name}/constants/__init__.py",
+    "config/config.yaml",
+    "params.yaml",
+    "schema.yaml",
+    "main.py",
+    "app.py",
+    "requirements.txt",
+    "setup.py",
+    "research/trials.ipynb",
+    "templates/index.html" 	
+
+2) Opened setup.py file in VS code
+
+2.1) In setup.py file paste below code 	
+
+import setuptools
+
+with open("README.md", "r", encoding="utf-8") as f:
+    long_description = f.read()
+
+
+__version__ = "0.0.0" # Project version
+
+REPO_NAME = "End-to-end-ML-Project"
+AUTHOR_USER_NAME = "Samadhan262728"
+SRC_REPO = "mlProject"
+AUTHOR_EMAIL = "samadhan.pisal.2828@gmail.com"
+
+
+setuptools.setup(
+    name=SRC_REPO,
+    version=__version__,
+    author=AUTHOR_USER_NAME,
+    author_email=AUTHOR_EMAIL,
+    description="A small python package for ml app",
+    long_description=long_description,
+    long_description_content="text/markdown",
+    url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
+    project_urls={
+        "Bug Tracker": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues",
+    },
+    package_dir={"": "src"},
+    packages=setuptools.find_packages(where="src")
+)
+
+                                                   OR 
+										if we missed step number A		   
+
+1) conda create -n <Environment name> python=3.8 -y 
+2) conda activate <Environment name>
+3) Opened requirements.txt file in VS code
+   3.1) In requirements.txt file paste required Libraries like 
+        pandas 
+        notebook
+        numpy
+        scikit-learn
+        matplotlib
+        python-box==6.0.2
+        pyYAML
+        ensure==1.0.2
+        joblib
+        types-PyYAML
+        Flask
+        Flask-Cors
+        -e .
+3) Run command pip install -r requirements.txt in command prompt in folder path with project environment
+4) python app.py -> need to check 
+5) Now open up your local host 0.0.0.0:8080	-> need to check											   
