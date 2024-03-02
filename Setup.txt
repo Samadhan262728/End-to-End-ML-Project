@@ -1,5 +1,7 @@
 End to End Machine Lerning Project 
 
+                                                      DAY 1
+
 >A] How to create Environment:
  
 0) Check python extension is instlled or not in VS Code, if not availble then search & install it  
@@ -158,4 +160,12 @@ setuptools.setup(
         -e .
 3) Run command pip install -r requirements.txt in command prompt in folder path with project environment
 4) python app.py -> need to check 
-5) Now open up your local host 0.0.0.0:8080	-> need to check											   
+5) Now open up your local host 0.0.0.0:8080	-> need to check
+
+                                                       DAY 2
+1) Notebook Experiment 
+    -> Here you are required to create a new notebook within the research folder and upload your dataset to the same folder. 
+	-> then you need to develop your machine learning model and implement it on your dataset in a newly created notebook.  
+	
+2) Project utility -> Logging, Exception & utils Module 
+3) Project Workflow 												   
