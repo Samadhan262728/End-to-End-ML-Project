@@ -37,10 +37,15 @@ End to End Machine Lerning Project
 1.1) In template.py file paste below code 
  
    import os
-   from pathlib import Path
-   import logging             #What is logging ?
+   
+   from pathlib import Path #COMMENT:- Using pathlib's Path class provides a more readable and convenient way to work with file paths in Python code compared to traditional string manipulation.
+   
+   import logging           
+   
    logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
+   
    project_name = <Project name> 
+   
    list_of_files = [
     f"src/{project_name}/__init__.py",
     f"src/{project_name}/components/__init__.py",
