@@ -210,4 +210,27 @@ logger.info("This is our Custome log!")
 
         6-> Please check in the terminal, How the functionality of our logging system works 	
     
->C) Project Workflow 												   
+	B.3] utils Module :-
+	    If a function is used regularly in a Project, it is referred to as a utility function.  
+	    1-> here we need to create one file <common.py> under Utils folder 
+		2-> In common.py we used below listed function 
+		    2.1-> read_yaml(path_to_yaml: Path) -> ConfigBox                 #COMMENT:- This function reads a YAML file from the given path and returns its contents as a ConfigBox object. It logs a message if the file is loaded successfully and raises a ValueError if the YAML file is empty.
+			2.2-> create_directories(path_to_directories: list, verbose=True)#COMMENT:- This function creates directories specified in the list path_to_directories. It uses os.makedirs() to create directories recursively. It also logs a message for each directory created. The verbose parameter controls whether to log messages or not.
+			2.3-> save_json(path: Path, data: dict)                          #COMMENT:- This function saves JSON data to a file specified by path. It uses json.dump() to serialize the data to the file in JSON format. It also logs a message after saving the file.
+            2.4->load_json(path: Path) -> ConfigBox                          #COMMENT:- This function loads JSON data from a file specified by path and returns it as a ConfigBox object. It logs a message if the file is loaded successfully.
+            2.5->save_bin(data: Any, path: Path)                             #COMMENT:- This function saves binary data to a file specified by path. It uses joblib.dump() to serialize the data to the file in binary format. It also logs a message after saving the file.
+            2.6->load_bin(path: Path) -> Any                                 #COMMENT:- This function loads binary data from a file specified by path and returns it. It uses joblib.load() to deserialize the data from the file. It logs a message if the file is loaded successfully.
+            2.7->get_size(path: Path) -> str                                 #COMMENT:- This function returns the size of the file specified by path in kilobytes (KB). It uses os.path.getsize() to get the size of the file and converts it to KB. The size is returned as a string with an approximate value followed by "KB".
+	
+	
+>C) Project Workflow
+
+update config.yaml
+update schema.yaml
+update params.yaml
+update the entity
+update the configuration manager in src config
+update the components
+update the pipeline
+update the main.py
+update the app.py 												   
